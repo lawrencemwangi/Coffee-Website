@@ -1,0 +1,291 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #919191;
+    color:#000;
+    overflow-x: hidden;
+}
+
+//cell phone views styles
+header{
+    nav{
+        .logo{
+            text-transform: uppercase;
+            color:#fff;
+            font-size: 1rem;
+            margin-right: 6em;
+        }
+
+        .links{
+            position: absolute;
+            top:8vh;
+            right: 0; 
+            height:80vh;
+            background: #8787;
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+
+            li{
+                opacity: 0;
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    padding: 1.9em 0;
+                    color:#fff;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+                a:after {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    background-color: rgb(44, 194, 214);
+                    width: 0;
+                    transition: width 0.3s ease-in-out;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                }
+                a:hover:after{
+                    width: 40%;
+                    left:30%;
+                }
+            }
+        }
+
+        .menu{
+            position: absolute;
+            right: 1.2em;
+            display:block;
+            cursor: pointer;
+
+            .fa-times, .fa-bars {
+                font-size: 1.5em;
+            }
+        }
+
+        .nav-active{
+            transform: translateX(0%);
+        }
+
+        @keyframes linksfade{
+            from{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    } 
+}
+
+.home{
+    display: none;
+   .slider{
+    position: unset;
+    .images_slider{
+        position: unset;
+        img{
+            width: 100%;
+            height: 55vh;
+        }
+    }
+   }
+   
+}
+
+.about{
+    padding:0.9em 5%;
+    display: none;
+
+    h3{
+        text-align: center;
+        font-weight: bold;
+        margin: 0.3em 0;
+        font-size: 1.5em;
+    }
+
+    .about_content{
+        .about_video{
+            width: 100%;
+
+            video{
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+        .about_info{
+            // border: 1px solid #000;
+            h2{
+                text-align: center;
+                color:#28e7e7;
+            }
+            .black_dot{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 8px 0;
+                .dot{
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin: 0 5px;
+                }
+            }
+            p{
+                font-size: 1.3rem;
+                font-weight: 500;
+                margin-bottom: 0.9em;
+            }
+            a{
+                text-decoration: none;
+                align-self: center;
+                font-size: 1.3rem;
+                color:#28e7e7;
+                padding: 0.2em 0.6em;
+                background: #000;
+            }
+        
+        }
+    }
+}
+.gallery{
+    display: none;
+}
+.contact{
+    display: none;
+}
+.end{
+    display: none;
+}
+
+@media screen and (width >= 768px){
+    // desktop view styles 
+    nav{
+        background-color: #000;
+        box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+        display: flex;
+        height: 12vh;
+        justify-content:space-around;
+        align-items: center;
+        color: #fff;
+
+        .logo{
+            text-transform: uppercase;
+            color:#fff;
+            font-size: 1.3rem;
+        }
+      
+  .links{
+            list-style: none; 
+            display: flex;
+            justify-content: space-around;
+            width: 40%;
+            li{    
+                a{
+                    text-decoration: none;
+                    color:#fff;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+                a:after {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    background-color: rgb(44, 194, 214);
+                    width: 0;
+                    transition: width 0.3s ease-in-out;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                }
+                
+                a:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+        .menu{
+            display: none;
+        }
+    } 
+
+    .slider{
+        display: none;
+        position: relative;
+
+        .images_slider{
+            position: absolute;
+            width: 100%;
+
+            img{
+                height: 92vh;
+                width: 100%;
+            }
+        }
+    }
+    .about{
+        padding:.09em 3%;
+
+        .about_content{
+            display: flex;
+            flex-direction: row;
+            gap:1.3em;
+            
+            .about_video{
+                position: relative;
+                width: 100%;
+                max-width: 700px;
+                margin: 0 auto;
+
+                video{
+                    width: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            .about_info{
+                margin: 1.3em 0;
+
+                h3{
+                    text-align: center;
+                    margin:0.4em 0;
+                    font-size: 1.4em;
+                }
+                h2{
+                    text-align: center;
+                    font-weight: 900;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+    .gallery{
+        display:none;
+    }
+    .contact{
+        display: none;
+    }
+    .end{
+        display: none;
+    }
+}
+
+

@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #919191;
+  color: #000;
+  overflow-x: hidden;
+}
+
+header nav .logo {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 6em;
+}
+header nav .links {
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  height: 80vh;
+  background: rgba(136, 119, 136, 0.4666666667);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+header nav .links li {
+  opacity: 0;
+  list-style: none;
+}
+header nav .links li a {
+  text-decoration: none;
+  padding: 1.9em 0;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header nav .links li a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: rgb(44, 194, 214);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+header nav .links li a:hover:after {
+  width: 40%;
+  left: 30%;
+}
+header nav .menu {
+  position: absolute;
+  right: 1.2em;
+  display: block;
+  cursor: pointer;
+}
+header nav .menu .fa-times, header nav .menu .fa-bars {
+  font-size: 1.5em;
+}
+header nav .nav-active {
+  transform: translateX(0%);
+}
+@keyframes linksfade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.home {
+  display: none;
+}
+.home .slider {
+  position: unset;
+}
+.home .slider .images_slider {
+  position: unset;
+}
+.home .slider .images_slider img {
+  width: 100%;
+  height: 55vh;
+}
+
+.about {
+  padding: 0.9em 5%;
+  display: none;
+}
+.about h3 {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.3em 0;
+  font-size: 1.5em;
+}
+.about .about_content .about_video {
+  width: 100%;
+}
+.about .about_content .about_video video {
+  width: 100%;
+  border-radius: 8px;
+}
+.about .about_content .about_info h2 {
+  text-align: center;
+  color: #28e7e7;
+}
+.about .about_content .about_info .black_dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+.about .about_content .about_info .black_dot .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  margin: 0 5px;
+}
+.about .about_content .about_info p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.9em;
+}
+.about .about_content .about_info a {
+  text-decoration: none;
+  align-self: center;
+  font-size: 1.3rem;
+  color: #28e7e7;
+  padding: 0.2em 0.6em;
+  background: #000;
+}
+
+.gallery {
+  display: none;
+}
+
+.contact {
+  display: none;
+}
+
+.end {
+  display: none;
+}
+
+@media screen and (width >= 926px) {
+  nav {
+    background-color: #000;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 12vh;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+  }
+  nav .logo {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  nav .menu {
+    display: none;
+  }
+  .slider {
+    display: none;
+    position: relative;
+  }
+  .slider .images_slider {
+    position: absolute;
+    width: 100%;
+  }
+  .slider .images_slider img {
+    height: 92vh;
+    width: 100%;
+  }
+  .about {
+    padding: 0.09em 3%;
+  }
+  .about .about_content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3em;
+  }
+  .about .about_content .about_video {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .about .about_content .about_video video {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .about .about_content .about_info {
+    margin: 1.3em 0;
+  }
+  .about .about_content .about_info h3 {
+    text-align: center;
+    margin: 0.4em 0;
+    font-size: 1.4em;
+  }
+  .about .about_content .about_info h2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.2rem;
+  }
+  .gallery {
+    display: none;
+  }
+  .contact {
+    display: none;
+  }
+  .end {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

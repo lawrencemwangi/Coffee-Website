@@ -1,0 +1,146 @@
+.story_info{
+    background-image:url(../images/img1.jpg);
+    position: relative;
+    height: 45vh;
+    background-size:cover;
+    background-position:center;
+    width:100%;
+    opacity: 0.7;
+
+    .content{
+        color: #fff;
+       
+        h1{
+            text-align: center;
+            padding:1em 0; 
+            font-size: 4.4rem; 
+        }
+    }
+}
+h2 {
+    color: #046baf;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.motto{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:40px;
+    color:#000;
+    padding:1.2em 2%;
+    height: 70vh;
+
+    .mission, .vision {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+    .mission{
+        background: #aeaeae;
+    }
+    .mission:hover, .vision:hover {
+        transform:translateY(-15px);
+    }
+}
+.founder{
+    display:grid;
+    grid-template-columns: repeat(2,2fr);
+    gap:1.4em;
+    color:#fff;
+    padding:1.2em 2%;
+
+    .info{
+        .since{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                font-family: 'Dancing Script', 'cursive';
+                font-size: 2.2rem;
+                position: relative;
+                color: #046baf;
+            }
+    
+            span::before {
+                content: '';
+                color: inherit;
+            }
+        }  
+    }
+    .images{
+        position: relative;
+        img{
+            width: 95%;
+            border-radius: 20px;
+            height: 65vh;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+        .head{
+            position: absolute;
+            top:40%;
+            left:20%;
+
+            h2{
+                color:#fff;
+                font-size: 2.2rem;
+            }
+        }
+    }
+}
+.owner{
+    padding:1.2em 2%;
+    h2{
+        padding-bottom: 0.9em;
+    }
+    p{
+        color:#fff;
+        text-align: center;
+    }
+    .hello{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.9em;
+        img{
+            width: 20%;
+            border-radius: 20px;
+            height: 50vh;
+            transition: 0.3s;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+    }
+    .social_media{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons{
+        color:#fff;
+        font-size: 1.4rem;
+        a{
+            color:#fff;
+            text-decoration: none;
+
+            i{
+                margin-right: 30px;
+            }
+            i:hover{
+                color:#046baf;
+            }
+        }      
+    }
+}
