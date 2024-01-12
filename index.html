@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lawrence coffe shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav id="navbar">
             <div class="logo">
                 <p>Lawrence Coffe Shop </p>
             </div>
@@ -27,48 +28,43 @@
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
-
-    </header>   
+    </header>  
+     
     <section id="Home" class="home">
-        <div class="slider" id="slider">
-            <div class="images_slider">
-                <img src="assets/images/shop2.jpg" alt="shop image">
-                <div class="slider_content">
-                    <h2>Our story</h2>
-                    <p>Serviced Kangema town since 2020</p>
-                    <a href="#">Learn More</a>
+        <div class="hero_container">
+            <div class="container">
+                <h1>Coffee Shop</h1>
+                <p>Welcome to Lawrence Coffee Shop we Provide the best of all time Coffee</p>
+            </div>
+        </div>
+    </section>
+    <section id="blog" class="blog">
+        <h2>Our Blog</h2>
+        <div class="blog_container show">
+            <div class="blog_content">
+                <div class="blog_image">
+                    <img src="assets/images/cup.jpg" alt="coffe image">
+                </div>
+                <div class="text">
+                    <h3>Importance of Coffee</h3>
+                    <p>
+                        Coffee is a popular beverage enjoyed worldwide for its stimulating effects.
+                        It contains caffeine, which enhances alertness and reduces fatigue. Additionally, 
+                        coffee is a social and cultural catalyst, fostering connections among individuals
+                    </p>
                 </div>
             </div>
-            <div class="images_slider">
-                <img src="assets/images/keycoffe.jpg" alt="shop image">
-                <div class="slider_content">
-                    <h2>Our Menu</h2>
-                    <p>Serviced Kangema town since 2020</p>
-                    <a href="#">Learn More</a>
+            <div class="blog_content">
+                <div class="text">
+                    <h3>Benefits of Coffee</h3>
+                    <p>
+                        Coffee offers numerous benefits, including increased alertness, enhanced mood, and 
+                        improved cognitive function. It contains antioxidants that may protect against certain
+                        diseases, contributing to overall well-being and longevity.
+                    </p>
                 </div>
-            </div>
-            <div class="images_slider">
-                <img src="assets/images/beans.jpg" alt="shop image">
-                <div class="slider_content">
-                    <h2>About</h2>
-                    <p>Serviced Kangema town since 2020</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-            <div class="images_slider">
-                <img src="assets/images/coffebeans.jpg" alt="shop image">
-                <div class="slider_content">
-                    <h2>Our Services</h2>
-                    <p>Serviced Kangema town since 2020</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-            <div class="navigator">
-                <div class="arrows" onclick="slide(-1)">
-                    &lt;
-                </div>
-                <div class="arrows" onclick="slide(1)">
-                    &gt;
+                <div class="blog_image">
+                    <img src="assets/images/img1.jpg" alt="coffe image">
                 </div>
             </div>
         </div>
@@ -76,7 +72,7 @@
 
     <!-- the about for the coffee shop -->
     <section id="About" class="about">
-        <h3>Our Story</h3>
+        <h2>Our Story</h2>
         <div class="about_content">
             <div class="about_video">
                 <video autoplay muted loop>
@@ -100,7 +96,7 @@
                     testament to our
                     commitment to excellence...
                 </p>
-                <a href="about.html">Read More</a>
+                    <a href="about.html">Read More</a>
             </div>
         </div>
     </section>
@@ -189,22 +185,30 @@
                 <p>sat - sun: 10:00am - 4:00pm</p>
             </div>
             <div class="form">
-                <form action="" method="post">
+                <form id="contactForm"action="send_email.php" method="post">
                     <div class="input_group">
                         <div class="names">
-                            <input type="text" name="First_name" id="first_name" placeholder="First Name" required>
-                            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                           <div class="input">
+                            <input type="text" name="First_name" id="first_name"  required>
+                            <label for="first_name"><i class="fas fa-user-alt"></i>First Name</label>
+                           </div>
+                           <div class="input">
+                            <input type="text" name="last_name" id="last_name" plac required>
+                            <label for="last_name"><i class="fas fa-user-alt"></i>Last Name</label>
+                           </div>
                         </div>
                         <div class="input">
-                            <input type="email" name="email" id="email" placeholder="Email" required>
+                            <input type="email" name="email" id="email"  required>
+                            <label for="email"><i class="fas fa-envelope"></i>Email</label>
                         </div>
                         <div class="input">
-                            <textarea name="" id="" cols="10" rows="5" placeholder="Type you Message Here"
-                                reqiured></textarea>
+                            <textarea  id="message"  rows="5" required></textarea>
+                            <label for="message"><i class="fas fa-comments"></i>Message</label>
                         </div>
                     </div>
-                    <button type="submit"><a href="mailto:lawrencecoffeeshop@gmail.com">Submit</a></button>
+                    <button type="submit">Submit</button>
                 </form>
+                <div id="responseMsg"></div>
             </div>
         </div>
     </section>
@@ -216,14 +220,13 @@
                 <h1>Lawrence Coffe Shop</h1>
             </div>
             <div class="links">
-                <h1>Links</h1>
+                <h3>Links</h3>
                 <a href="#Home">Home</a>
-                <a href="#About">About</a>
+                <a href="about.html">About</a>
                 <a href="menu.html">Menu</a>
-                <a href="#">Service</a>
             </div>
             <div class="social_media">
-                <h1>Social Media Platforms</h1>
+                <h3>Social Media Platforms</h3>
                 <div class="icon">
                     <a href="#"><i class="fab fa-facebook-square"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -231,10 +234,36 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <p>&copy; 2024 Lawrence Coffee Shop | All Rigth Reserved</p>
-        </div>
     </section>
+    <div class="footer">
+        <p>&copy; 2024 Lawrence Coffee Shop | All Rigth Reserved</p>
+    </div>
     <script src="assets/js/script.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submitBtn").on("click", function() {
+            var formData = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                message: $("#message").val()
+            };
+        
+            $.ajax({
+                type: "POST",
+                url: "send_email.php", // Replace with the actual path
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function(response) {
+                $("#responseMsg").html(response);
+                },
+                error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                $("#responseMsg").html("Oops! Something went wrong. Please try again later.");
+                }
+            });
+            });
+        });
+  
+    </script>
 </body>
 </html>
