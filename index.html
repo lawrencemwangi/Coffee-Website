@@ -43,7 +43,10 @@
         <div class="blog_container show">
             <div class="blog_content">
                 <div class="blog_image">
-                    <img src="assets/images/cup.jpg" alt="coffe image">
+                    <div class="image-placeholder">
+                        <div class="loading-spinner">Loading...</div>
+                    </div>
+                    <img src="assets/images/blog1.jpg" alt="coffe image" onload="showImage(this);" style="display: none;">
                 </div>
                 <div class="text">
                     <h3>Importance of Coffee</h3>
@@ -64,7 +67,10 @@
                     </p>
                 </div>
                 <div class="blog_image">
-                    <img src="assets/images/img1.jpg" alt="coffe image">
+                    <div class="image-placeholder">
+                        <div class="loading-spinner">Loading...</div>
+                    </div>
+                    <img src="assets/images/blog2.jpg" alt="coffe image" onload="showImage(this);" style="display: none;">
                 </div>
             </div>
         </div>
@@ -106,7 +112,10 @@
         <h2>Our Gallery</h2>
         <div class="gallery_image">
             <div class="gallery-info">
-                <img src="assets/images/coffeeshop1.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                <img src="assets/images/coffeeshop1.jpg" alt="..." onload="showImage(this);" style="display: none;">
             
                 <div class="content-g">
                     <h2>Our shop</h2>
@@ -116,7 +125,10 @@
                 </div>
             </div>
             <div class="gallery-info">
-                <img src="assets/images/coffee machine.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                <img src="assets/images/coffee machine.jpg" alt="..." onload="showImage(this);" style="display: none;">
            
                 <div class="content-g">
                     <h2>Coffee Making Process</h2>
@@ -126,7 +138,10 @@
                 </div>
             </div>
             <div class="gallery-info">
-                    <img src="assets/images/coffeetable.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                    <img src="assets/images/coffeetable.jpg" alt="..." onload="showImage(this);" style="display: none;">
             
                 <div class="content-g">
                     <h2>Our Table</h2>
@@ -136,7 +151,10 @@
                 </div>
             </div>
             <div class="gallery-info">
-                <img src="assets/images/coffefarm.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                <img src="assets/images/coffefarm.jpg" alt="..." onload="showImage(this);" style="display: none;">
                 
                 <div class="content-g">
                     <h2>Our farm</h2>
@@ -146,7 +164,10 @@
                 </div>
             </div>
             <div class="gallery-info">
-                <img src="assets/images/coffeecup.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                <img src="assets/images/coffeecup.jpg" alt="..." onload="showImage(this);" style="display: none;">
             
                 <div class="content-g">
                     <h2>Our Coffee</h2>
@@ -156,7 +177,10 @@
                 </div>
             </div>
             <div class="gallery-info">
-                <img src="assets/images/coffeebeans.jpg" alt="...">
+                <div class="image-placeholder">
+                    <div class="loading-spinner">Loading...</div>
+                </div>
+                <img src="assets/images/coffeebeans.jpg" alt="..." onload="showImage(this);" style="display: none;">
             
                 <div class="content-g">
                     <h2>Our coffeebeans</h2>
@@ -185,7 +209,7 @@
                 <p>sat - sun: 10:00am - 4:00pm</p>
             </div>
             <div class="form">
-                <form id="contactForm"action="send_email.php" method="post">
+                <form id="contactForm"  onsubmit="return validateForm(event)"  action="" method="post" >
                     <div class="input_group">
                         <div class="names">
                            <div class="input">
@@ -206,9 +230,8 @@
                             <label for="message"><i class="fas fa-comments"></i>Message</label>
                         </div>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" >Submit</button>
                 </form>
-                <div id="responseMsg"></div>
             </div>
         </div>
     </section>
@@ -238,32 +261,16 @@
     <div class="footer">
         <p>&copy; 2024 Lawrence Coffee Shop | All Rigth Reserved</p>
     </div>
-    <script src="assets/js/script.js" type="text/javascript"></script>
+
     <script>
-        $(document).ready(function() {
-            $("#submitBtn").on("click", function() {
-            var formData = {
-                name: $("#name").val(),
-                email: $("#email").val(),
-                message: $("#message").val()
-            };
-        
-            $.ajax({
-                type: "POST",
-                url: "send_email.php", // Replace with the actual path
-                data: JSON.stringify(formData),
-                contentType: "application/json",
-                success: function(response) {
-                $("#responseMsg").html(response);
-                },
-                error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-                $("#responseMsg").html("Oops! Something went wrong. Please try again later.");
-                }
-            });
-            });
-        });
-  
+        function showImage(img) {
+            img.style.display = 'block';
+            var placeholder = img.previousElementSibling;
+            if (placeholder) {
+            placeholder.style.display = 'none';
+            }
+        }
     </script>
+    <script src="assets/js/script.js" type="text/javascript"  defer></script>
 </body>
 </html>

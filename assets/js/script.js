@@ -164,7 +164,36 @@ const navSlide = () => {
 
 navSlide();
 
-// sending the email from the form to the gmail
+// Function to validate the form before submission
+    function validateForm(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        var firstName = document.getElementById('first_name').value;
+        var lastName = document.getElementById('last_name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        if (firstName.trim() === '' || lastName.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all fields before submitting the form.');
+            return false;
+        }
+
+        // Generate the email address dynamically
+        var emailAddress = 'lawnetmwas' + String.fromCharCode(64) + 'gmail.com';
+
+        // Set the mailto link
+        var mailtoLink = 'mailto:' + emailAddress + '?subject=' + encodeURIComponent('Contact Form Submission') +
+            '&body=' + encodeURIComponent('First Name: ' + firstName + '\nLast Name: ' + lastName + '\nEmail: ' + email + '\n\n' + message);
+
+        // Redirect to the mailto link in a new tab
+        window.open(mailtoLink, '_blank');
+
+        // Prevent the form from being submitted
+        return false;
+    }
+
+  
 
 
 
